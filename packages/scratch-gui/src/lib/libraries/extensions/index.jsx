@@ -49,6 +49,9 @@ import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 import faceSensingIconURL from './faceSensing/faceSensing.png';
 import faceSensingInsetIconURL from './faceSensing/faceSensing-small.svg';
 
+import arduinoIconURL from './arduino/arduino.svg';
+import arduinoInsetIconURL from './arduino/arduino-small.svg';
+
 export default [
     {
         name: (
@@ -412,5 +415,24 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
+    },
+    {
+        name: 'Arduino',
+        extensionId: 'arduinoControl',
+        iconURL: arduinoIconURL,
+        insetIconURL: arduinoInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Control Arduino Uno in real-time via USB."
+                description="Description for the 'Arduino' extension"
+                id="gui.extension.arduino.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: false,
+        bluetoothRequired: false,
+        launchPeripheralConnectionFlow: false,
+        useAutoScan: false
     }
 ];

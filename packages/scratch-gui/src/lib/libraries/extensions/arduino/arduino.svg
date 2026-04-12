@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 372">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00979D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#006B70;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="600" height="372" rx="16" fill="url(#bg)"/>
+
+  <!-- Arduino board outline -->
+  <rect x="120" y="60" width="360" height="220" rx="12" fill="white" opacity="0.15"/>
+  <rect x="130" y="70" width="340" height="200" rx="8" fill="white" opacity="0.1"/>
+
+  <!-- Chip -->
+  <rect x="240" y="120" width="120" height="80" rx="4" fill="white" opacity="0.25"/>
+  <!-- Chip pins left -->
+  <rect x="228" y="130" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="228" y="142" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="228" y="154" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="228" y="166" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="228" y="178" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="228" y="190" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <!-- Chip pins right -->
+  <rect x="356" y="130" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="356" y="142" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="356" y="154" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="356" y="166" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="356" y="178" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+  <rect x="356" y="190" width="16" height="4" rx="1" fill="white" opacity="0.3"/>
+
+  <!-- USB connector -->
+  <rect x="120" y="135" width="40" height="50" rx="3" fill="white" opacity="0.3"/>
+  <rect x="112" y="142" width="16" height="36" rx="2" fill="white" opacity="0.2"/>
+
+  <!-- Pin headers top -->
+  <g fill="white" opacity="0.35">
+    <rect x="180" y="68" width="8" height="16" rx="1"/>
+    <rect x="196" y="68" width="8" height="16" rx="1"/>
+    <rect x="212" y="68" width="8" height="16" rx="1"/>
+    <rect x="228" y="68" width="8" height="16" rx="1"/>
+    <rect x="244" y="68" width="8" height="16" rx="1"/>
+    <rect x="260" y="68" width="8" height="16" rx="1"/>
+    <rect x="276" y="68" width="8" height="16" rx="1"/>
+    <rect x="292" y="68" width="8" height="16" rx="1"/>
+    <rect x="308" y="68" width="8" height="16" rx="1"/>
+    <rect x="324" y="68" width="8" height="16" rx="1"/>
+    <rect x="340" y="68" width="8" height="16" rx="1"/>
+    <rect x="356" y="68" width="8" height="16" rx="1"/>
+    <rect x="372" y="68" width="8" height="16" rx="1"/>
+    <rect x="388" y="68" width="8" height="16" rx="1"/>
+  </g>
+
+  <!-- Pin headers bottom -->
+  <g fill="white" opacity="0.35">
+    <rect x="180" y="256" width="8" height="16" rx="1"/>
+    <rect x="196" y="256" width="8" height="16" rx="1"/>
+    <rect x="212" y="256" width="8" height="16" rx="1"/>
+    <rect x="228" y="256" width="8" height="16" rx="1"/>
+    <rect x="244" y="256" width="8" height="16" rx="1"/>
+    <rect x="260" y="256" width="8" height="16" rx="1"/>
+  </g>
+
+  <!-- Power LED -->
+  <circle cx="170" cy="230" r="5" fill="#4AFF4A" opacity="0.8"/>
+
+  <!-- LED 13 -->
+  <circle cx="420" cy="100" r="5" fill="#FFD700" opacity="0.6"/>
+
+  <!-- Reset button -->
+  <circle cx="430" cy="230" r="12" fill="white" opacity="0.2"/>
+  <circle cx="430" cy="230" r="8" fill="white" opacity="0.15"/>
+
+  <!-- Title text -->
+  <text x="300" y="336" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="bold" fill="white">Arduino</text>
+</svg>
