@@ -1,5 +1,6 @@
 const ArgumentType = require('../../extension-support/argument-type');
 const BlockType = require('../../extension-support/block-type');
+const formatMessage = require('format-message');
 
 const WS_URL = 'ws://localhost:9000';
 const RECONNECT_INTERVAL = 3000;
@@ -162,7 +163,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'isConnected',
                     blockType: BlockType.BOOLEAN,
-                    text: 'Arduino connected?'
+                    text: formatMessage({
+                        id: 'arduino.isConnected',
+                        default: 'Arduino connected?',
+                        description: 'reports whether the Arduino board is connected'
+                    })
                 },
 
                 '---',
@@ -170,7 +175,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'digitalWrite',
                     blockType: BlockType.COMMAND,
-                    text: 'set digital pin [PIN] to [VALUE]',
+                    text: formatMessage({
+                        id: 'arduino.digitalWrite',
+                        default: 'set digital pin [PIN] to [VALUE]',
+                        description: 'set a digital output pin HIGH or LOW'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.NUMBER,
@@ -188,7 +197,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'digitalRead',
                     blockType: BlockType.REPORTER,
-                    text: 'read digital pin [PIN]',
+                    text: formatMessage({
+                        id: 'arduino.digitalRead',
+                        default: 'read digital pin [PIN]',
+                        description: 'read the value of a digital input pin'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.NUMBER,
@@ -203,7 +216,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'analogRead',
                     blockType: BlockType.REPORTER,
-                    text: 'read analog pin [PIN]',
+                    text: formatMessage({
+                        id: 'arduino.analogRead',
+                        default: 'read analog pin [PIN]',
+                        description: 'read the value of an analog input pin'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.STRING,
@@ -216,7 +233,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'analogWrite',
                     blockType: BlockType.COMMAND,
-                    text: 'set PWM pin [PIN] to [VALUE]',
+                    text: formatMessage({
+                        id: 'arduino.analogWrite',
+                        default: 'set PWM pin [PIN] to [VALUE]',
+                        description: 'set a PWM output pin to a value from 0 to 255'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.NUMBER,
@@ -235,7 +256,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'servoWrite',
                     blockType: BlockType.COMMAND,
-                    text: 'set servo pin [PIN] to [ANGLE] degrees',
+                    text: formatMessage({
+                        id: 'arduino.servoWrite',
+                        default: 'set servo pin [PIN] to [ANGLE] degrees',
+                        description: 'move a servo connected to a pin to an angle'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.NUMBER,
@@ -254,7 +279,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'whenDigitalPin',
                     blockType: BlockType.HAT,
-                    text: 'when digital pin [PIN] is [VALUE]',
+                    text: formatMessage({
+                        id: 'arduino.whenDigitalPin',
+                        default: 'when digital pin [PIN] is [VALUE]',
+                        description: 'hat block triggered when a digital pin reaches a value'
+                    }),
                     arguments: {
                         PIN: {
                             type: ArgumentType.NUMBER,
@@ -274,7 +303,11 @@ class Scratch3ArduinoBlocks {
                 {
                     opcode: 'mapValue',
                     blockType: BlockType.REPORTER,
-                    text: 'map [VALUE] from [FROMLOW]-[FROMHIGH] to [TOLOW]-[TOHIGH]',
+                    text: formatMessage({
+                        id: 'arduino.mapValue',
+                        default: 'map [VALUE] from [FROMLOW]-[FROMHIGH] to [TOLOW]-[TOHIGH]',
+                        description: 're-scale a number from one range to another'
+                    }),
                     arguments: {
                         VALUE: {type: ArgumentType.NUMBER, defaultValue: 512},
                         FROMLOW: {type: ArgumentType.NUMBER, defaultValue: 0},
@@ -301,8 +334,22 @@ class Scratch3ArduinoBlocks {
                 highLow: {
                     acceptReporters: true,
                     items: [
-                        {text: 'HIGH', value: '1'},
-                        {text: 'LOW', value: '0'}
+                        {
+                            text: formatMessage({
+                                id: 'arduino.highLow.high',
+                                default: 'HIGH',
+                                description: 'menu label for digital HIGH (1) level'
+                            }),
+                            value: '1'
+                        },
+                        {
+                            text: formatMessage({
+                                id: 'arduino.highLow.low',
+                                default: 'LOW',
+                                description: 'menu label for digital LOW (0) level'
+                            }),
+                            value: '0'
+                        }
                     ]
                 }
             }
