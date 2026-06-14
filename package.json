@@ -1,6 +1,6 @@
 {
   "name": "scratch-editor",
-  "version": "13.7.4-svg",
+  "version": "14.1.0",
   "private": "true",
   "description": "Scratch editor mono-repository",
   "keywords": [],
@@ -16,7 +16,9 @@
   "author": "Scratch Foundation",
   "workspaces": [
     "packages/task-herder",
+    "packages/scratch-storage",
     "packages/scratch-svg-renderer",
+    "packages/scratch-paint",
     "packages/scratch-render",
     "packages/scratch-vm",
     "packages/scratch-gui",
@@ -29,7 +31,7 @@
     "refresh-gh-workflow": "ts-node scripts/update-gha-workflows.ts",
     "start": "npm --workspace @scratch/scratch-gui start",
     "test": "npm test --workspaces",
-    "update-legal": "npm --workspaces exec -c 'rm -f ./{LICENSE,TRADEMARK} && cp -f ../../{LICENSE,TRADEMARK} .'",
+    "update-legal": "scripts/update-legal.sh",
     "version": "cross-env-shell ./scripts/npm-version.sh"
   },
   "config": {
@@ -47,7 +49,7 @@
     "globals": "16.5.0",
     "husky": "8.0.3",
     "npm": "10.9.8",
-    "semantic-release": "25.0.3",
+    "semantic-release": "25.0.5",
     "ts-node": "10.9.2"
   }
 }
