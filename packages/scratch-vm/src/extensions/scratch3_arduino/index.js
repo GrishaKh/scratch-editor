@@ -88,7 +88,7 @@ class ArduinoConnection {
             return;
         }
 
-        if (msg.id != null && this._pendingRequests.has(msg.id)) {
+        if (typeof msg.id !== 'undefined' && msg.id !== null && this._pendingRequests.has(msg.id)) {
             const {resolve, reject} = this._pendingRequests.get(msg.id);
             this._pendingRequests.delete(msg.id);
             if (msg.type === 'error') {
@@ -436,7 +436,7 @@ class Scratch3ArduinoBlocks {
         const toHigh = parseFloat(args.TOHIGH);
 
         if (fromHigh === fromLow) return toLow;
-        return ((value - fromLow) / (fromHigh - fromLow)) * (toHigh - toLow) + toLow;
+        return (((value - fromLow) / (fromHigh - fromLow)) * (toHigh - toLow)) + toLow;
     }
 }
 
