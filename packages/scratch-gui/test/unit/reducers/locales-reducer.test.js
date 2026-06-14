@@ -35,4 +35,8 @@ test('UPDATE_LOCALES re-merges custom strings onto incoming messages', () => {
     expect(next.messagesByLocale.hy['arduino.highLow.low']).toBe('ՑԱԾՐ');
     // the derived `messages` shortcut tracks the merged map for the active locale
     expect(next.messages['arduino.highLow.low']).toBeUndefined(); // active locale is 'en'
+    // the merge must NOT mutate the incoming (populated) hy object: arduino.*
+    // strings land only on the new merged object, while the source keeps its keys
+    expect(action.messagesByLocale.hy['arduino.highLow.low']).toBeUndefined();
+    expect(action.messagesByLocale.hy['some.core.id']).toBe('թարմ');
 });
