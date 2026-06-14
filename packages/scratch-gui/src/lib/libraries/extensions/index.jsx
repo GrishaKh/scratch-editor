@@ -417,7 +417,13 @@ export default [
         helpLink: 'https://scratch.mit.edu/wedo'
     },
     {
-        name: 'Arduino',
+        name: (
+            <FormattedMessage
+                defaultMessage="Arduino"
+                description="Name for the 'Arduino' extension"
+                id="gui.extension.arduino.name"
+            />
+        ),
         extensionId: 'arduinoControl',
         iconURL: arduinoIconURL,
         insetIconURL: arduinoInsetIconURL,
