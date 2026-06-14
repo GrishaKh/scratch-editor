@@ -1,14 +1,27 @@
 import {isRtl} from 'scratch-l10n';
 import editorMessages from 'scratch-l10n/locales/editor-msgs';
+import customMessages from '../lib/arduino-messages';
 
 const UPDATE_LOCALES = 'scratch-gui/locales/UPDATE_LOCALES';
 const SELECT_LOCALE = 'scratch-gui/locales/SELECT_LOCALE';
 
+// Merge in-repo custom extension strings (e.g. Arduino) on top of the
+// scratch-l10n editor messages, per locale, without mutating the source.
+const mergeCustomMessages = base => {
+    const merged = Object.assign({}, base);
+    for (const locale of Object.keys(customMessages)) {
+        merged[locale] = Object.assign({}, base[locale] || {}, customMessages[locale]);
+    }
+    return merged;
+};
+
+const mergedEditorMessages = mergeCustomMessages(editorMessages);
+
 const initialState = {
     isRtl: false,
     locale: 'en',
-    messagesByLocale: editorMessages,
-    messages: editorMessages.en
+    messagesByLocale: mergedEditorMessages,
+    messages: mergedEditorMessages.en
 };
 
 const reducer = function (state, action) {
@@ -21,13 +34,15 @@ const reducer = function (state, action) {
             messagesByLocale: state.messagesByLocale,
             messages: state.messagesByLocale[action.locale]
         });
-    case UPDATE_LOCALES:
+    case UPDATE_LOCALES: {
+        const mergedByLocale = mergeCustomMessages(action.messagesByLocale);
         return Object.assign({}, state, {
             isRtl: state.isRtl,
             locale: state.locale,
-            messagesByLocale: action.messagesByLocale,
-            messages: action.messagesByLocale[state.locale]
+            messagesByLocale: mergedByLocale,
+            messages: mergedByLocale[state.locale]
         });
+    }
     default:
         return state;
     }
