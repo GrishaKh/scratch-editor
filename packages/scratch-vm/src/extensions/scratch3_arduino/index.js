@@ -6,8 +6,12 @@ const WS_URL = 'ws://localhost:9000';
 const RECONNECT_INTERVAL = 3000;
 const REQUEST_TIMEOUT = 2000;
 
-// eslint-disable-next-line @stylistic/max-len
-const blockIconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3QgeD0iMiIgeT0iOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjI0IiByeD0iMyIgZmlsbD0iIzAwOTc5RCIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjYiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjkiLz48dGV4dCB4PSIyMCIgeT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZpbGw9IiMwMDk3OUQiPkE8L3RleHQ+PC9zdmc+';
+const blockIconURI =
+    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3' +
+    'g9IjAgMCA0MCA0MCI+PHJlY3QgeD0iMiIgeT0iOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjI0IiByeD0iMyIgZmlsbD' +
+    '0iIzAwOTc5RCIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjYiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLj' +
+    'kiLz48dGV4dCB4PSIyMCIgeT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZm' +
+    'FtaWx5PSJtb25vc3BhY2UiIGZpbGw9IiMwMDk3OUQiPkE8L3RleHQ+PC9zdmc+';
 
 class ArduinoConnection {
     constructor () {
